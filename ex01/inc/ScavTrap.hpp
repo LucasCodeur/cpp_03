@@ -20,7 +20,8 @@ class	ScavTrap : public ClapTrap
 	public:
 	ScavTrap( void );
 	ScavTrap( std::string name );
-		// void guardGate();
+	~ScavTrap( void );
+	void guardGate();
 	private:
 	
 };

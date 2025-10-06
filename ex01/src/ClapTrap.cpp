@@ -16,7 +16,7 @@
 
 ClapTrap::ClapTrap( void )
 {
-	std::cout << "Default constructor called\n";
+	std::cout << "Default constructor of ClapTrap called\n";
 	this->_hitPoints = 100;
 	this->_energyPoints = 10;
 	this->_attackDamage = 0;
@@ -24,7 +24,7 @@ ClapTrap::ClapTrap( void )
 
 ClapTrap::ClapTrap( std::string name )
 {
-	std::cout << "Parameterized constructor called\n";
+	std::cout << "Parameterized constructor of ClapTrap called\n";
 	this->_name = name;
 	this->_hitPoints = 100;
 	this->_energyPoints = 10;
@@ -33,7 +33,7 @@ ClapTrap::ClapTrap( std::string name )
 
 ClapTrap::~ClapTrap( void )
 {
-	std::cout << "Deconstructor called" << std::endl;
+	std::cout << "Deconstructor of ClapTrap called" << std::endl;
 }
 
 void ClapTrap::attack(const std::string& target)

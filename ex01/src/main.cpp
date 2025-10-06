@@ -18,7 +18,7 @@
 int main( void )
 {
 	ScavTrap	Clyde("Clyde");
-	Clyde.attack("Bob");
+	Clyde.guardGate();
 
 	return 0;
 }
