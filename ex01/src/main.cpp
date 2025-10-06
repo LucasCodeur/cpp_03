@@ -17,9 +17,8 @@
 
 int main( void )
 {
-	ClapTrap	Bob("Bob");
-
-	ScavTrap	Clyde( void );
+	ScavTrap	Clyde("Clyde");
+	Clyde.attack("Bob");
 
 	return 0;
 }

@@ -32,5 +32,56 @@
    ".obj/ClapTrap.o"
   ],
   "file": "src/ClapTrap.cpp"
+ },
+ {
+  "directory": "/home/lud-adam/Documents/cpp_03/ex01",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++98",
+   "-I",
+   "inc/",
+   "-c",
+   "src/main.cpp",
+   "-o",
+   ".obj/main.o"
+  ],
+  "file": "src/main.cpp"
+ },
+ {
+  "directory": "/home/lud-adam/Documents/cpp_03/ex01",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++98",
+   "-I",
+   "inc/",
+   "-c",
+   "src/ClapTrap.cpp",
+   "-o",
+   ".obj/ClapTrap.o"
+  ],
+  "file": "src/ClapTrap.cpp"
+ },
+ {
+  "directory": "/home/lud-adam/Documents/cpp_03/ex01",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++98",
+   "-I",
+   "inc/",
+   "-c",
+   "src/ScavTrap.cpp",
+   "-o",
+   ".obj/ScavTrap.o"
+  ],
+  "file": "src/ScavTrap.cpp"
  }
 ]

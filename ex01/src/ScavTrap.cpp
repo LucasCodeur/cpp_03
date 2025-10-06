@@ -14,7 +14,7 @@
 
 #include <iostream>
 
-ScavTrap::ScavTrap( void ) : ClapTrap()
+ScavTrap::ScavTrap( std::string name ) : ClapTrap(name)
 {
 	std::cout << "Constructor of the derived class ScavTrap" << std::endl;
 }
