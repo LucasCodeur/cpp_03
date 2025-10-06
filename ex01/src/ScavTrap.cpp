@@ -35,3 +35,13 @@ void ScavTrap::guardGate( void )
 {
 	std::cout << "ScavTrap " << this->_name << " is now in Gate keeper mode" << std::endl;
 }
+
+int	ScavTrap::getEnergyPoints( void )
+{
+	return (this->_energyPoints);
+}
+
+int	ScavTrap::getHitPoints( void )
+{
+	return (this->_hitPoints);
+}

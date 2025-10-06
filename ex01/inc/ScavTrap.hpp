@@ -18,12 +18,13 @@
 class	ScavTrap : public ClapTrap
 {
 	public:
-	ScavTrap( void );
-	ScavTrap( std::string name );
-	~ScavTrap( void );
-	void guardGate();
+		ScavTrap( void );
+		ScavTrap( std::string name );
+		~ScavTrap( void );
+		void guardGate();
+		int	getEnergyPoints( void );
+		int	getHitPoints( void );
 	private:
-	
 };
 
 #endif
