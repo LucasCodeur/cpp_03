@@ -31,6 +31,27 @@ ClapTrap::ClapTrap( std::string name )
 	this->_attackDamage = 0;
 }
 
+ClapTrap::ClapTrap( const ClapTrap &other )
+{
+	std::cout << "Parameterized constructor called\n";
+	this->_name = other._name;
+	this->_hitPoints = other._hitPoints;
+	this->_energyPoints = other._energyPoints;
+	this->_attackDamage = other._attackDamage;
+}
+
+ClapTrap& ClapTrap::operator=(const ClapTrap &other)
+{
+	if (this != &other)
+	{
+		this->_name = other._name;
+		this->_hitPoints = other._hitPoints;
+		this->_energyPoints = other._energyPoints;
+		this->_attackDamage = other._attackDamage;
+	}
+	return (*this);
+}
+
 ClapTrap::~ClapTrap( void )
 {
 	std::cout << "Deconstructor called\n";

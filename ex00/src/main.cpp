@@ -29,5 +29,14 @@ int main( void )
 	std::cout << "Life: "<< Bob.getHitPoints() << std::endl; 
 	std::cout << "Energy points: "<< Bob.getEnergyPoints() << std::endl;
 
+	ClapTrap	Roger(Bob);
+
+	Roger.attack("BOB");
+
+	ClapTrap	Peter;
+
+	Peter = Roger;
+	Roger.attack("BOB");
+
 	return 0;
 }
