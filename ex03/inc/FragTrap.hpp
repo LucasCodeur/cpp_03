@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lud-adam <lud-adam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/03 11:15:17 by lud-adam          #+#    #+#             */
-/*   Updated: 2025/10/05 16:14:13 by lud-adam         ###   ########.fr       */
+/*   Created: 2025/10/06 14:34:06 by lud-adam          #+#    #+#             */
+/*   Updated: 2025/10/06 16:34:23 by lud-adam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
 #include "ClapTrap.hpp"
 
-class	ScavTrap : public ClapTrap
+class	FragTrap : public ClapTrap
 {
 	public:
-		ScavTrap( void );
-		ScavTrap( std::string name );
-		ScavTrap( const ClapTrap &other );
-		ScavTrap& operator=( const ClapTrap &other );
-		~ScavTrap( void );
-		void guardGate();
+		FragTrap( void );
+		FragTrap( std::string name );
+		~FragTrap( void );
+		void highFivesGuys(void);
 		int	getEnergyPoints( void );
 		int	getHitPoints( void );
-	private:
+	protected:
 };
 
 #endif

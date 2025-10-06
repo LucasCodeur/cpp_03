@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lud-adam <lud-adam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/03 11:15:17 by lud-adam          #+#    #+#             */
-/*   Updated: 2025/10/05 16:14:13 by lud-adam         ###   ########.fr       */
+/*   Created: 2025/10/06 15:44:43 by lud-adam          #+#    #+#             */
+/*   Updated: 2025/10/06 16:47:02 by lud-adam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef DIAMONDTRAP_HPP
+# define DIAMONDTRAP_HPP
 
-#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
-class	ScavTrap : public ClapTrap
+class	DiamondTrap : public FragTrap, public ScavTrap
 {
 	public:
-		ScavTrap( void );
-		ScavTrap( std::string name );
-		ScavTrap( const ClapTrap &other );
-		ScavTrap& operator=( const ClapTrap &other );
-		~ScavTrap( void );
-		void guardGate();
-		int	getEnergyPoints( void );
-		int	getHitPoints( void );
+		DiamondTrap( void );
+		// DiamondTrap( std::string name );
+		// ~DiamondTrap( void );
+		// int	getEnergyPoints( void );
+		// int	getHitPoints( void );
 	private:
+		std::string			_name;
 };
 
 #endif

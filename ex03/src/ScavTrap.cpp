@@ -14,14 +14,22 @@
 
 #include <iostream>
 
-ScavTrap::ScavTrap( std::string name )
+ScavTrap::ScavTrap( std::string name ) : ClapTrap(name)
 {
 	std::cout << "Constructor of the derived class ScavTrap" << std::endl;
-	this_name = name;
 	this->_hitPoints = 100;
 	this->_energyPoints = 50;
 	this->_attackDamage = 20;
 }
+
+ScavTrap::~ScavTrap()
+{
+	std::cout << "Deconstructor of the derived class ScavTrap" << std::endl;
+	this->_hitPoints = 100;
+	this->_energyPoints = 50;
+	this->_attackDamage = 20;
+}
+
 
 void ScavTrap::guardGate( void )
 {

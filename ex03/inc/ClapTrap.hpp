@@ -20,8 +20,6 @@ class	ClapTrap
 	public:
 		ClapTrap( void );
 		ClapTrap( std::string name );
-		ClapTrap( const ClapTrap &other );
-		ClapTrap& operator=( const ClapTrap &other );
 		~ClapTrap( void );
 
 		void	attack(const std::string& target);
