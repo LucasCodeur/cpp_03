@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lud-adam <lud-adam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/11 17:04:30 by lud-adam          #+#    #+#             */
-/*   Updated: 2025/10/05 16:15:37 by lud-adam         ###   ########.fr       */
+/*   Created: 2025/10/05 15:35:56 by lud-adam          #+#    #+#             */
+/*   Updated: 2025/10/05 16:15:16 by lud-adam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-
-#include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 
-int main( void )
+#include <iostream>
+
+ScavTrap::ScavTrap( void ) : ClapTrap()
 {
-	ClapTrap	Bob("Bob");
-
-	ScavTrap	Clyde( void );
-
-	return 0;
+	std::cout << "Constructor of the derived class ScavTrap" << std::endl;
 }

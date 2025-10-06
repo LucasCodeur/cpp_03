@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lud-adam <lud-adam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/11 17:04:30 by lud-adam          #+#    #+#             */
-/*   Updated: 2025/10/05 16:15:37 by lud-adam         ###   ########.fr       */
+/*   Created: 2025/10/03 11:15:17 by lud-adam          #+#    #+#             */
+/*   Updated: 2025/10/05 16:14:13 by lud-adam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
 #include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
 
-int main( void )
+class	ScavTrap : public ClapTrap
 {
-	ClapTrap	Bob("Bob");
+	public:
+	ScavTrap( void );
+		// void guardGate();
+	private:
+	
+};
 
-	ScavTrap	Clyde( void );
-
-	return 0;
-}
+#endif

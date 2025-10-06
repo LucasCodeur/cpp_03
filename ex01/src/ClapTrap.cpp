@@ -6,7 +6,7 @@
 /*   By: lud-adam <lud-adam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 13:53:58 by lud-adam          #+#    #+#             */
-/*   Updated: 2025/10/02 14:00:12 by lud-adam         ###   ########.fr       */
+/*   Updated: 2025/10/05 15:54:23 by lud-adam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 ClapTrap::ClapTrap( void )
 {
 	std::cout << "Default constructor called\n";
-	this->_hitPoints = 10;
+	this->_hitPoints = 100;
 	this->_energyPoints = 10;
 	this->_attackDamage = 0;
 }
@@ -26,7 +26,7 @@ ClapTrap::ClapTrap( std::string name )
 {
 	std::cout << "Parameterized constructor called\n";
 	this->_name = name;
-	this->_hitPoints = 10;
+	this->_hitPoints = 100;
 	this->_energyPoints = 10;
 	this->_attackDamage = 0;
 }
