@@ -12,11 +12,19 @@
 
 #include "ScavTrap.hpp"
 
-#include <iostream>
+ScavTrap::ScavTrap( void )
+{
+	std::cout << "Default constructor of ScavTrap called\n";
+	this->_name = "Bob";
+	this->_hitPoints = 100;
+	this->_energyPoints = 50;
+	this->_attackDamage = 20;
+}
 
-ScavTrap::ScavTrap( std::string name ) : ClapTrap(name)
+ScavTrap::ScavTrap( std::string name )
 {
 	std::cout << "Constructor of the derived class ScavTrap" << std::endl;
+	this->_name = name;
 	this->_hitPoints = 100;
 	this->_energyPoints = 50;
 	this->_attackDamage = 20;
@@ -30,6 +38,26 @@ ScavTrap::~ScavTrap()
 	this->_attackDamage = 20;
 }
 
+ScavTrap::ScavTrap( const ScavTrap &other )
+{
+	std::cout << "Parameterized constructor called\n";
+	this->_name = other._name;
+	this->_hitPoints = other._hitPoints;
+	this->_energyPoints = other._energyPoints;
+	this->_attackDamage = other._attackDamage;
+}
+
+ScavTrap& ScavTrap::operator=( const ScavTrap &other )
+{
+	if (this != &other)
+	{
+		this->_name = other._name;
+		this->_hitPoints = other._hitPoints;
+		this->_energyPoints = other._energyPoints;
+		this->_attackDamage = other._attackDamage;
+	}
+	return (*this);
+}
 
 void ScavTrap::guardGate( void )
 {
@@ -44,4 +72,9 @@ int	ScavTrap::getEnergyPoints( void )
 int	ScavTrap::getHitPoints( void )
 {
 	return (this->_hitPoints);
+}
+
+int	ScavTrap::getAttackDamage( void )
+{
+	return (this->_attackDamage);
 }

@@ -12,9 +12,16 @@
 
 #include "ScavTrap.hpp"
 
-#include <iostream>
+ScavTrap::ScavTrap( void )
+{
+	std::cout << "Default constructor of ScavTrap called\n";
+	this->_name = "Bob";
+	this->_hitPoints = 100;
+	this->_energyPoints = 10;
+	this->_attackDamage = 0;
+}
 
-ScavTrap::ScavTrap( std::string name ) : ClapTrap(name)
+ScavTrap::ScavTrap( std::string name ): ClapTrap(name)
 {
 	std::cout << "Constructor of the derived class ScavTrap" << std::endl;
 	this->_hitPoints = 100;
@@ -40,7 +47,7 @@ ScavTrap::ScavTrap( const ScavTrap &other )
 	this->_attackDamage = other._attackDamage;
 }
 
-ScavTrap& ScavTrap::operator=(const ScavTrap &other)
+ScavTrap& ScavTrap::operator=( const ScavTrap &other )
 {
 	if (this != &other)
 	{

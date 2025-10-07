@@ -16,7 +16,7 @@
 
 int main( void )
 {
-	ClapTrap	Bob("Bob");
+	ClapTrap	Bob;
 
 	std::cout << "Energy points: "<< Bob.getEnergyPoints() << std::endl;
 	Bob.attack("Kevin");

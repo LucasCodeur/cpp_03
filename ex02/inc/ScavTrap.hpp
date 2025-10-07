@@ -20,6 +20,8 @@ class	ScavTrap : public ClapTrap
 	public:
 		ScavTrap( void );
 		ScavTrap( std::string name );
+		ScavTrap& operator=( const ScavTrap &other );
+		ScavTrap( const ScavTrap &other );
 		~ScavTrap( void );
 		void guardGate();
 		int	getEnergyPoints( void );

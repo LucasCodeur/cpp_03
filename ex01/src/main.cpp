@@ -10,14 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 
 int main( void )
 {
-	ClapTrap	Bob("Bob");
+	ClapTrap	Bob;
 	ScavTrap	Clyde("Clyde");
 	Clyde.guardGate();
 	std::cout << "Clyde Energy Points :" << Clyde.getEnergyPoints() << std::endl;
