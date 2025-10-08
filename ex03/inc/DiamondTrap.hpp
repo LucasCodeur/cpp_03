@@ -24,10 +24,12 @@ class	DiamondTrap : public FragTrap, public ScavTrap
 		DiamondTrap( const DiamondTrap &other );
 		DiamondTrap& operator=( const DiamondTrap &other );
 		~DiamondTrap( void );
+		void attack(const std::string& target);
 		int	getEnergyPoints( void );
 		int	getHitPoints( void );
 		int	getAttackDamage( void );
 		std::string getName( void );
+		void whoAmI();
 	private:
 		std::string			_name;
 };

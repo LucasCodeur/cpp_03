@@ -12,34 +12,33 @@
 
 #include "DiamondTrap.hpp"
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
-DiamondTrap::DiamondTrap( void )
+DiamondTrap::DiamondTrap( void )/* : ScavTrap("Bob_clap_name")*/
 {
 	std::cout << "Constructor of the derived class DiamondTrap" << std::endl;
-	this->_name = "Bob";
-	this->_hitPoints = FragTrap::_hitPoints;
-	this->_energyPoints = ScavTrap::_energyPoints;
-	this->_attackDamage = FragTrap::_attackDamage;
-	ClapTrap::_name = "Bob_clap_name";
+	// this->_name = "Bob";
+	// this->_hitPoints = 100;
+	// this->_energyPoints = 50;
+	// this->_attackDamage = 30;
 }
 
-DiamondTrap::DiamondTrap( std::string name ) : ClapTrap()
+DiamondTrap::DiamondTrap( std::string name )/* : FragTrap(name + "_clap_name"), ScavTrap(name + "_clap_name")*/
 {
 	std::cout << "Constructor of the derived class DiamondTrap" << std::endl;
-	this->_hitPoints = FragTrap::_hitPoints;
-	this->_energyPoints = ScavTrap::_energyPoints;
-	this->_attackDamage = FragTrap::_attackDamage;
-	this->_name = name;
-	ClapTrap::_name = name + "_clap_name";
+	// this->_hitPoints = 100;
+	// this->_energyPoints = 50;
+	// this->_attackDamage = 30;
+	// this->_name = name;
 }
 
 DiamondTrap::DiamondTrap( const DiamondTrap &other )
 {
-	std::cout << "Parameterized constructor called\n";
-	this->_name = other._name;
-	this->_hitPoints = other._hitPoints;
-	this->_energyPoints = other._energyPoints;
-	this->_attackDamage = other._attackDamage;
+	std::cout << "Parameterized constructor of DiamondTrap called\n";
+	// this->_name = other._name;
+	// this->_hitPoints = other._hitPoints;
+	// this->_energyPoints = other._energyPoints;
+	// this->_attackDamage = other._attackDamage;
 }
 
 DiamondTrap& DiamondTrap::operator=( const DiamondTrap &other )
@@ -77,4 +76,17 @@ std::string DiamondTrap::getName( void )
 int	DiamondTrap::getAttackDamage( void )
 {
 	return (this->_attackDamage);
+}
+
+void DiamondTrap::attack(const std::string& target)
+{
+		ScavTrap::attack(target);
+}
+
+void DiamondTrap::whoAmI()
+{
+	std::cout << "Claptrap: " << this->getName() << std::endl;
+	std::cout << "Parent ClapTrap: " << this->ClapTrap::getName() << std::endl;
+	std::cout << "Parent ScavTrap: " << this->ScavTrap::getName() << std::endl;
+	std::cout << "Parent FragTrap: " << this->FragTrap::getName() << std::endl;
 }

@@ -12,7 +12,7 @@
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap( void )
+ScavTrap::ScavTrap( void ) : ClapTrap("Bob")
 {
 	std::cout << "Default constructor of ScavTrap called\n";
 	this->_name = "Bob";
@@ -21,7 +21,7 @@ ScavTrap::ScavTrap( void )
 	this->_attackDamage = 20;
 }
 
-ScavTrap::ScavTrap( std::string name )
+ScavTrap::ScavTrap( std::string name ) : ClapTrap(name)
 {
 	std::cout << "Constructor of the derived class ScavTrap" << std::endl;
 	this->_name = name;
@@ -33,14 +33,11 @@ ScavTrap::ScavTrap( std::string name )
 ScavTrap::~ScavTrap()
 {
 	std::cout << "Deconstructor of the derived class ScavTrap" << std::endl;
-	this->_hitPoints = 100;
-	this->_energyPoints = 50;
-	this->_attackDamage = 20;
 }
 
 ScavTrap::ScavTrap( const ScavTrap &other )
 {
-	std::cout << "Parameterized constructor called\n";
+	std::cout << "Parameterized constructor of ScavTrap called\n";
 	this->_name = other._name;
 	this->_hitPoints = other._hitPoints;
 	this->_energyPoints = other._energyPoints;
