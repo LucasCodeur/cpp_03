@@ -16,17 +16,12 @@
 
 int main( void )
 {
-	ClapTrap	Bob("Bob");
-	ScavTrap	Clyde("Clyde");
 	FragTrap	George("George");
 
-	Clyde.guardGate();
-	std::cout << "Clyde Energy Points :" << Clyde.getEnergyPoints() << std::endl;
-	std::cout << "Clyde Hit Points :" << Clyde.getHitPoints() << std::endl;
-
 	George.highFivesGuys();
-	std::cout << "George Energy Points :" << George.getEnergyPoints() << std::endl;
 	std::cout << "George Hit Points :" << George.getHitPoints() << std::endl;
+	std::cout << "George Energy Points :" << George.getEnergyPoints() << std::endl;
+	George.attack("Bob");
 
 	return 0;
 }

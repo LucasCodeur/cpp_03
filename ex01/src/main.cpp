@@ -15,11 +15,11 @@
 
 int main( void )
 {
-	ClapTrap	Bob;
 	ScavTrap	Clyde("Clyde");
-	Clyde.guardGate();
-	std::cout << "Clyde Energy Points :" << Clyde.getEnergyPoints() << std::endl;
 	std::cout << "Clyde Hit Points :" << Clyde.getHitPoints() << std::endl;
+	std::cout << "Clyde Energy Points :" << Clyde.getEnergyPoints() << std::endl;
+	Clyde.guardGate();
+	Clyde.attack("Bob");
 
 	return 0;
 }

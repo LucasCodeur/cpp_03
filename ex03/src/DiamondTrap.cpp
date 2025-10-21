@@ -14,31 +14,31 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 
-DiamondTrap::DiamondTrap( void )/* : ScavTrap("Bob_clap_name")*/
+DiamondTrap::DiamondTrap( void ) : ScavTrap("Bob_clap_name")
 {
 	std::cout << "Constructor of the derived class DiamondTrap" << std::endl;
-	// this->_name = "Bob";
-	// this->_hitPoints = 100;
-	// this->_energyPoints = 50;
-	// this->_attackDamage = 30;
+	this->_name = "Bob";
+	this->_hitPoints = 100;
+	this->_energyPoints = 50;
+	this->_attackDamage = 30;
 }
 
-DiamondTrap::DiamondTrap( std::string name )/* : FragTrap(name + "_clap_name"), ScavTrap(name + "_clap_name")*/
+DiamondTrap::DiamondTrap( std::string name ) : FragTrap(name + "_clap_name"), ScavTrap(name + "_clap_name")
 {
 	std::cout << "Constructor of the derived class DiamondTrap" << std::endl;
-	// this->_hitPoints = 100;
-	// this->_energyPoints = 50;
-	// this->_attackDamage = 30;
-	// this->_name = name;
+	this->_hitPoints = 100;
+	this->_energyPoints = 50;
+	this->_attackDamage = 30;
+	this->_name = name;
 }
 
 DiamondTrap::DiamondTrap( const DiamondTrap &other )
 {
 	std::cout << "Parameterized constructor of DiamondTrap called\n";
-	// this->_name = other._name;
-	// this->_hitPoints = other._hitPoints;
-	// this->_energyPoints = other._energyPoints;
-	// this->_attackDamage = other._attackDamage;
+	this->_name = other._name;
+	this->_hitPoints = other._hitPoints;
+	this->_energyPoints = other._energyPoints;
+	this->_attackDamage = other._attackDamage;
 }
 
 DiamondTrap& DiamondTrap::operator=( const DiamondTrap &other )

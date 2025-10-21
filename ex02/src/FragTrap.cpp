@@ -17,8 +17,8 @@ FragTrap::FragTrap( void )
 	std::cout << "Default constructor of FragTrap called\n";
 	this->_name = "Bob";
 	this->_hitPoints = 100;
-	this->_energyPoints = 10;
-	this->_attackDamage = 0;
+	this->_energyPoints = 100;
+	this->_attackDamage = 30;
 }
 
 FragTrap::FragTrap( std::string name ) : ClapTrap(name)
@@ -61,7 +61,6 @@ FragTrap& FragTrap::operator=( const FragTrap &other )
 void FragTrap::highFivesGuys(void)
 {
 	std::cout << "FragTrap " << this->_name << " wanna do a high fives guys ? " << std::endl; 
-
 }
 
 int	FragTrap::getEnergyPoints( void )
