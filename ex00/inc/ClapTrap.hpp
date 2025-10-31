@@ -31,6 +31,7 @@ class	ClapTrap
 		int		getHitPoints( void );
 	private:
 		std::string			_name;
+		std::string			_type;
 		unsigned int	_hitPoints;
 		unsigned int	_energyPoints;
 		unsigned int	_attackDamage;

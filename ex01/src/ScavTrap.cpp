@@ -16,6 +16,7 @@ ScavTrap::ScavTrap( void )
 {
 	std::cout << "Default constructor of ScavTrap called\n";
 	this->_name = "Bob";
+	this->_type = "ScavTrap ";
 	this->_hitPoints = 100;
 	this->_energyPoints = 50;
 	this->_attackDamage = 20;
@@ -24,10 +25,11 @@ ScavTrap::ScavTrap( void )
 ScavTrap::ScavTrap( std::string name ): ClapTrap(name)
 {
 	std::cout << "Constructor of the derived class ScavTrap" << std::endl;
+	this->_name = name;
+	this->_type = "ScavTrap ";
 	this->_hitPoints = 100;
 	this->_energyPoints = 50;
 	this->_attackDamage = 20;
-	this->_name = name;
 }
 
 ScavTrap::~ScavTrap()
@@ -37,8 +39,9 @@ ScavTrap::~ScavTrap()
 
 ScavTrap::ScavTrap( const ScavTrap &other )
 {
-	std::cout << "Parameterized constructor called\n";
+	std::cout << "Parameterized of ScavTrap constructor called\n";
 	this->_name = other._name;
+	this->_type = other._type;
 	this->_hitPoints = other._hitPoints;
 	this->_energyPoints = other._energyPoints;
 	this->_attackDamage = other._attackDamage;
@@ -49,6 +52,7 @@ ScavTrap& ScavTrap::operator=( const ScavTrap &other )
 	if (this != &other)
 	{
 		this->_name = other._name;
+		this->_type = other._type;
 		this->_hitPoints = other._hitPoints;
 		this->_energyPoints = other._energyPoints;
 		this->_attackDamage = other._attackDamage;
@@ -58,7 +62,7 @@ ScavTrap& ScavTrap::operator=( const ScavTrap &other )
 
 void ScavTrap::guardGate( void )
 {
-	std::cout << "ScavTrap " << this->_name << " is now in Gate keeper mode" << std::endl;
+	std::cout << this->_type << this->_name << " is now in Gate keeper mode" << std::endl;
 }
 
 int	ScavTrap::getEnergyPoints( void )

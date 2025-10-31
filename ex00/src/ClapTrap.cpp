@@ -18,6 +18,7 @@ ClapTrap::ClapTrap( void )
 {
 	std::cout << "Default constructor called\n";
 	this->_name = "Bob";
+	this->_type = "ClapTrap ";
 	this->_hitPoints = 10;
 	this->_energyPoints = 10;
 	this->_attackDamage = 0;
@@ -26,6 +27,7 @@ ClapTrap::ClapTrap( void )
 ClapTrap::ClapTrap( std::string name )
 {
 	std::cout << "Parameterized constructor called\n";
+	this->_type = "ClapTrap ";
 	this->_name = name;
 	this->_hitPoints = 10;
 	this->_energyPoints = 10;
@@ -36,6 +38,7 @@ ClapTrap::ClapTrap( const ClapTrap &other )
 {
 	std::cout << "Parameterized constructor called\n";
 	this->_name = other._name;
+	this->_type = other._type;
 	this->_hitPoints = other._hitPoints;
 	this->_energyPoints = other._energyPoints;
 	this->_attackDamage = other._attackDamage;
@@ -46,6 +49,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &other)
 	if (this != &other)
 	{
 		this->_name = other._name;
+		this->_type = other._type;
 		this->_hitPoints = other._hitPoints;
 		this->_energyPoints = other._energyPoints;
 		this->_attackDamage = other._attackDamage;
@@ -71,7 +75,7 @@ void ClapTrap::attack(const std::string& target)
 		return ;
 	}
 	this->_energyPoints--;
-	std::cout << "ClapTrap " << this->_name << " attacks " << target << ", causing " << this->_attackDamage << " points of damage !" << std::endl;
+	std::cout << this->_type << this->_name << " attacks " << target << ", causing " << this->_attackDamage << " points of damage !" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
@@ -82,7 +86,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 		return ;
 	}
 	this->_hitPoints -= amount;
-	std::cout << "ClapTrap " << this->_name << " take damage: " << amount << std::endl; 
+	std::cout << this->_type << this->_name << " take damage: " << amount << std::endl; 
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
@@ -103,7 +107,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		return ;
 	}
 	this->_energyPoints--;
-	std::cout << "ClapTrap " << this->_name << " repairing itself of: " << amount << std::endl; 
+	std::cout << this->_type << this->_name << " repairing itself of: " << amount << std::endl; 
 	this->_hitPoints += amount;
 }
 
