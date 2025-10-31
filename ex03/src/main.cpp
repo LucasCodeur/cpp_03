@@ -6,7 +6,7 @@
 /*   By: lud-adam <lud-adam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 17:04:30 by lud-adam          #+#    #+#             */
-/*   Updated: 2025/10/07 19:28:29 by lud-adam         ###   ########.fr       */
+/*   Updated: 2025/10/22 17:57:40 by lud-adam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,13 @@ int main( void )
 {
 	DiamondTrap Paul("Bertrand");
 
-	std::cout << "Claptrap: " << Paul.getName() << " Hitpoints :" << Paul.getHitPoints() << std::endl;
-	std::cout << "Claptrap: " << Paul.getName() << " energypoints :" << Paul.getEnergyPoints() << std::endl;
-	std::cout << "Claptrap: " << Paul.getName() << " attackDamage :" << Paul.FragTrap::getAttackDamage() << std::endl;
+	ClapTrap*	paulfrag = &Paul;
+	ScavTrap*	paulscav = &Paul;
+	std::cout << Paul.getName() << " Hitpoints :" << Paul.getHitPoints() << std::endl;
+	std::cout << Paul.getName() << " energypoints :" << Paul.getEnergyPoints() << std::endl;
+	std::cout << Paul.getName() << " attackDamage :" <<  &Paul.getAttackDamage() << Paul.getAttackDamage() << std::endl;
+	std::cout << Paul.getName() << " attackDamage :" <<  &paulscav->getAttackDamage() << Paul.getAttackDamage() << std::endl;
+
 	Paul.attack("BOB");
 	Paul.whoAmI();
 

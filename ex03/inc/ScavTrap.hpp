@@ -26,7 +26,8 @@ class	ScavTrap : virtual public ClapTrap
 		void guardGate();
 		int	getEnergyPoints( void );
 		int	getHitPoints( void );
-		int	getAttackDamage( void );
+		const int&	getAttackDamage( void );
+		void attack(const std::string& target);
 };
 
 #endif

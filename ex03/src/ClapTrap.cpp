@@ -6,7 +6,7 @@
 /*   By: lud-adam <lud-adam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 13:53:58 by lud-adam          #+#    #+#             */
-/*   Updated: 2025/10/06 14:31:07 by lud-adam         ###   ########.fr       */
+/*   Updated: 2025/10/02 14:00:12 by lud-adam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,29 +16,35 @@
 
 ClapTrap::ClapTrap( void )
 {
-	std::cout << "Default constructor of ClapTrap called\n";
+	std::cout << "Default constructor called\n";
 	this->_name = "Bob";
-	this->_hitPoints = 100;
+	this->_type = "ClapTrap ";
+	this->_hitPoints = 10;
 	this->_energyPoints = 10;
 	this->_attackDamage = 0;
+	std::cout << &_attackDamage << std::endl;
 }
 
 ClapTrap::ClapTrap( std::string name )
 {
-	std::cout << "Parameterized constructor of ClapTrap called\n";
+	std::cout << "Parameterized constructor called\n";
+	this->_type = "ClapTrap ";
 	this->_name = name;
-	this->_hitPoints = 100;
+	this->_hitPoints = 10;
 	this->_energyPoints = 10;
 	this->_attackDamage = 0;
+	std::cout << &_attackDamage << std::endl;
 }
 
 ClapTrap::ClapTrap( const ClapTrap &other )
 {
 	std::cout << "Parameterized constructor called\n";
 	this->_name = other._name;
+	this->_type = other._type;
 	this->_hitPoints = other._hitPoints;
 	this->_energyPoints = other._energyPoints;
 	this->_attackDamage = other._attackDamage;
+	std::cout << &_attackDamage << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap &other)
@@ -46,6 +52,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &other)
 	if (this != &other)
 	{
 		this->_name = other._name;
+		this->_type = other._type;
 		this->_hitPoints = other._hitPoints;
 		this->_energyPoints = other._energyPoints;
 		this->_attackDamage = other._attackDamage;
@@ -55,7 +62,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &other)
 
 ClapTrap::~ClapTrap( void )
 {
-	std::cout << "Deconstructor of ClapTrap called" << std::endl;
+	std::cout << "Deconstructor called\n";
 }
 
 void ClapTrap::attack(const std::string& target)
@@ -71,7 +78,7 @@ void ClapTrap::attack(const std::string& target)
 		return ;
 	}
 	this->_energyPoints--;
-	std::cout << "ClapTrap " << this->_name << " attacks " << target << ", causing " << this->_attackDamage << " points of damage !" << std::endl;
+	std::cout << this->_type << this->_name << " attacks " << target << ", causing " << this->_attackDamage << " points of damage !" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
@@ -82,7 +89,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 		return ;
 	}
 	this->_hitPoints -= amount;
-	std::cout << "ClapTrap " << this->_name << " take damage: " << amount << std::endl; 
+	std::cout << this->_type << this->_name << " take damage: " << amount << std::endl; 
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
@@ -103,7 +110,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		return ;
 	}
 	this->_energyPoints--;
-	std::cout << "ClapTrap " << this->_name << " repairing itself of: " << amount << std::endl; 
+	std::cout << this->_type << this->_name << " repairing itself of: " << amount << std::endl; 
 	this->_hitPoints += amount;
 }
 
@@ -117,7 +124,12 @@ int	ClapTrap::getHitPoints( void )
 	return (this->_hitPoints);
 }
 
-std::string ClapTrap::getName( void )
+std::string	ClapTrap::getName( void )
 {
 	return (this->_name);
+}
+
+const int&	ClapTrap::getAttackDamage( void )
+{
+	return (this->_attackDamage);
 }
