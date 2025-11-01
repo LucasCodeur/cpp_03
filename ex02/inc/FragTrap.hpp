@@ -6,7 +6,7 @@
 /*   By: lud-adam <lud-adam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 14:34:06 by lud-adam          #+#    #+#             */
-/*   Updated: 2025/10/06 14:42:00 by lud-adam         ###   ########.fr       */
+/*   Updated: 2025/10/31 15:24:22 by lud-adam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ClapTrap.hpp"
 
-class	FragTrap : public ClapTrap
+class	FragTrap : virtual public ClapTrap
 {
 	public:
 		FragTrap( void );
@@ -26,7 +26,7 @@ class	FragTrap : public ClapTrap
 		void highFivesGuys(void);
 		int	getEnergyPoints( void );
 		int	getHitPoints( void );
-	private:
+		int	getAttackDamage( void );
 };
 
 #endif

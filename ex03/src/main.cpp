@@ -16,12 +16,9 @@ int main( void )
 {
 	DiamondTrap Paul("Bertrand");
 
-	ClapTrap*	paulfrag = &Paul;
-	ScavTrap*	paulscav = &Paul;
 	std::cout << Paul.getName() << " Hitpoints :" << Paul.getHitPoints() << std::endl;
 	std::cout << Paul.getName() << " energypoints :" << Paul.getEnergyPoints() << std::endl;
-	std::cout << Paul.getName() << " attackDamage :" <<  &Paul.getAttackDamage() << Paul.getAttackDamage() << std::endl;
-	std::cout << Paul.getName() << " attackDamage :" <<  &paulscav->getAttackDamage() << Paul.getAttackDamage() << std::endl;
+	std::cout << Paul.getName() << " attackDamage :" << Paul.getAttackDamage() << std::endl;
 
 	Paul.attack("BOB");
 	Paul.whoAmI();

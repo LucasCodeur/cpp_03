@@ -22,7 +22,6 @@ DiamondTrap::DiamondTrap( void ) : ScavTrap("Bob_clap_name"), FragTrap("Bob_clap
 	this->_hitPoints = FragTrap::_hitPoints;
 	this->_energyPoints = ScavTrap::_energyPoints;
 	this->_attackDamage = FragTrap::_attackDamage;
-	std::cout << &_attackDamage << std::endl;
 }
 
 DiamondTrap::DiamondTrap( std::string name ) : ScavTrap(name + "_clap_name"), FragTrap(name + "_clap_name")
@@ -33,10 +32,9 @@ DiamondTrap::DiamondTrap( std::string name ) : ScavTrap(name + "_clap_name"), Fr
 	this->_hitPoints = FragTrap::_hitPoints;
 	this->_energyPoints = ScavTrap::_energyPoints;
 	this->_attackDamage = FragTrap::_attackDamage;
-	std::cout << &_attackDamage << std::endl;
 }
 
-DiamondTrap::DiamondTrap( const DiamondTrap &other )
+DiamondTrap::DiamondTrap( const DiamondTrap &other ) : ClapTrap(other), ScavTrap(other), FragTrap(other)
 {
 	std::cout << "Parameterized constructor of DiamondTrap called\n";
 	this->_name = other._name;
@@ -44,7 +42,6 @@ DiamondTrap::DiamondTrap( const DiamondTrap &other )
 	this->_hitPoints = other._hitPoints;
 	this->_energyPoints = other._energyPoints;
 	this->_attackDamage = other._attackDamage;
-	std::cout << &_attackDamage << std::endl;
 }
 
 DiamondTrap& DiamondTrap::operator=( const DiamondTrap &other )
@@ -80,7 +77,7 @@ std::string DiamondTrap::getName( void )
 	return (this->_name);
 }
 
-const int&	DiamondTrap::getAttackDamage( void )
+int	DiamondTrap::getAttackDamage( void )
 {
 	return (this->_attackDamage);
 }

@@ -15,7 +15,7 @@
 
 #include "ClapTrap.hpp"
 
-class	ScavTrap : public ClapTrap
+class	ScavTrap : virtual public ClapTrap
 {
 	public:
 		ScavTrap( void );
@@ -26,7 +26,8 @@ class	ScavTrap : public ClapTrap
 		void guardGate();
 		int	getEnergyPoints( void );
 		int	getHitPoints( void );
-	private:
+		int	getAttackDamage( void );
+		void attack(const std::string& target);
 };
 
 #endif

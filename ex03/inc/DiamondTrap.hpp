@@ -26,7 +26,7 @@ class	DiamondTrap :public ScavTrap, public FragTrap
 		~DiamondTrap( void );
 		int	getEnergyPoints( void );
 		int	getHitPoints( void );
-	const	int&	getAttackDamage( void );
+		int	getAttackDamage( void );
 		std::string getName( void );
 		void whoAmI();
 	private:

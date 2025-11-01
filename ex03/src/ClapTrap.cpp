@@ -22,7 +22,6 @@ ClapTrap::ClapTrap( void )
 	this->_hitPoints = 10;
 	this->_energyPoints = 10;
 	this->_attackDamage = 0;
-	std::cout << &_attackDamage << std::endl;
 }
 
 ClapTrap::ClapTrap( std::string name )
@@ -33,7 +32,6 @@ ClapTrap::ClapTrap( std::string name )
 	this->_hitPoints = 10;
 	this->_energyPoints = 10;
 	this->_attackDamage = 0;
-	std::cout << &_attackDamage << std::endl;
 }
 
 ClapTrap::ClapTrap( const ClapTrap &other )
@@ -44,7 +42,6 @@ ClapTrap::ClapTrap( const ClapTrap &other )
 	this->_hitPoints = other._hitPoints;
 	this->_energyPoints = other._energyPoints;
 	this->_attackDamage = other._attackDamage;
-	std::cout << &_attackDamage << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap &other)
@@ -129,7 +126,7 @@ std::string	ClapTrap::getName( void )
 	return (this->_name);
 }
 
-const int&	ClapTrap::getAttackDamage( void )
+int	ClapTrap::getAttackDamage( void )
 {
 	return (this->_attackDamage);
 }

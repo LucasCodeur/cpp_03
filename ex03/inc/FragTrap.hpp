@@ -18,8 +18,10 @@
 class	FragTrap : virtual public ClapTrap
 {
 	protected:
-		unsigned int _energyPoints;
+		unsigned int	_energyPoints;
+		unsigned int	_HitPoints;
 		unsigned int	_attackDamage;
+		std::string		_type;
 	public:
 		FragTrap( void );
 		FragTrap( std::string name );
@@ -29,7 +31,7 @@ class	FragTrap : virtual public ClapTrap
 		void highFivesGuys(void);
 		int	getEnergyPoints( void );
 		int	getHitPoints( void );
-		const int&	getAttackDamage( void );
+		int	getAttackDamage( void );
 };
 
 #endif

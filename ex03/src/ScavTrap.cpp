@@ -30,7 +30,6 @@ ScavTrap::ScavTrap( std::string name ) : ClapTrap(name)
 	this->_hitPoints = 100;
 	this->_energyPoints = 50;
 	this->_attackDamage = 20;
-	std::cout << &_attackDamage << std::endl;
 }
 
 ScavTrap::~ScavTrap()
@@ -38,7 +37,7 @@ ScavTrap::~ScavTrap()
 	std::cout << "Deconstructor of the derived class ScavTrap" << std::endl;
 }
 
-ScavTrap::ScavTrap( const ScavTrap &other )
+ScavTrap::ScavTrap( const ScavTrap &other ) : ClapTrap(other)
 {
 	std::cout << "Parameterized constructor of ScavTrap called\n";
 	this->_name = other._name;
@@ -74,7 +73,7 @@ void ScavTrap::attack(const std::string& target)
 		return ;
 	}
 	this->_energyPoints--;
-	std::cout << _type << "Scav" << this->_name << " attacks " << target << ", causing " << this->_attackDamage << " points of damage !" << std::endl;
+	std::cout << _type << this->_name << " attacks " << target << ", causing " << this->_attackDamage << " points of damage !" << std::endl;
 }
 
 void ScavTrap::guardGate( void )
@@ -92,7 +91,7 @@ int	ScavTrap::getHitPoints( void )
 	return (this->_hitPoints);
 }
 
-const int&	ScavTrap::getAttackDamage( void )
+int	ScavTrap::getAttackDamage( void )
 {
 	return (this->_attackDamage);
 }

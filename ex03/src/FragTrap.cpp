@@ -20,7 +20,6 @@ FragTrap::FragTrap( void ) : ClapTrap("Bob")
 	this->_hitPoints = 100;
 	this->_energyPoints = 100;
 	this->_attackDamage = 30;
-	std::cout << &_attackDamage << std::endl;
 }
 
 FragTrap::FragTrap( std::string name ) : ClapTrap(name)
@@ -31,7 +30,6 @@ FragTrap::FragTrap( std::string name ) : ClapTrap(name)
 	this->_hitPoints = 100;
 	this->_energyPoints = 100;
 	this->_attackDamage = 30;
-	std::cout << &_attackDamage << std::endl;
 }
 
 FragTrap::~FragTrap()
@@ -39,7 +37,7 @@ FragTrap::~FragTrap()
 	std::cout << "Deconstructor of the derived class FragTrap" << std::endl;
 }
 
-FragTrap::FragTrap( const FragTrap &other )
+FragTrap::FragTrap( const FragTrap &other ) : ClapTrap(other)
 {
 	std::cout << "Parameterized constructor of FragTrap called\n";
 	this->_name = other._name;
@@ -65,7 +63,6 @@ FragTrap& FragTrap::operator=( const FragTrap &other )
 void FragTrap::highFivesGuys(void)
 {
 	std::cout << this->_type << this->_name << " wanna do a high fives guys ? " << std::endl; 
-
 }
 
 int	FragTrap::getEnergyPoints( void )
@@ -78,7 +75,7 @@ int	FragTrap::getHitPoints( void )
 	return (this->_hitPoints);
 }
 
-const int&	FragTrap::getAttackDamage( void )
+int	FragTrap::getAttackDamage( void )
 {
 	return (this->_attackDamage);
 }
